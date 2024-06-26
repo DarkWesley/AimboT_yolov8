@@ -33,6 +33,12 @@ python -m pip install --upgrade pip
 
 选择数据集后，查看数据集文件夹下的`.yaml`文件。以`./datasets/csgo`为例，`./datasets/csgo/data.yaml`文件夹中，记录了识别目标的`name_class`。
 
+**注意**：目前无法上传`./datasets`文件夹到`github`，请在该网站下载:
+
+https://universe.roboflow.com/sprite-fanta-gpj4f/demmodels
+
+下载后在代码根目录下新建`datasets`文件夹，将数据集解压到`./datasets`文件夹中。
+
 打开`./train.py`文件，修改其中的
 
 ```
