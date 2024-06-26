@@ -8,7 +8,7 @@ if __name__ == '__main__':
     import torch.multiprocessing
     torch.multiprocessing.freeze_support()
 
-    results = model.train(data="D:/Aimbot_for_AI/yolov8/ultralytics-main/datasets/cs;go/data.yaml",
+    results = model.train(data="D:/Aimbot_for_AI/yolov8/ultralytics-main/datasets/csgo/data.yaml",
                           epochs=100,
                           batch=16,
                           imgsz=640,

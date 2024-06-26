@@ -10,14 +10,14 @@ import pynput
 import time
 
 # 初始化YOLOv8模型
-model = YOLO("best.pt")
+model = YOLO("v8s_180.pt")
 
 # 锁头功能开关
 trace_on = False
 detection_modes = {
-    "teamCT": {"classes": [2, 3]},
-    "teamT": {"classes": [0, 1]},
-    "Solo": {"classes": [0, 1, 2, 3]}
+    "teamCT": {"classes": [4, 5]},
+    "teamT": {"classes": [1, 2]},
+    "Solo": {"classes": [1, 2, 4, 5]}
 }
 team_mode = "Solo"
 team_cur = detection_modes[team_mode]
@@ -92,12 +92,12 @@ def mouse_move(boxes):
         target_x = 0
         target_y = 0
         distance_list.sort(key=lambda x: x[3])
-        if distance_list[0][0] == 1 or distance_list[0][0] == 3:       # cls == 1: ct_head; cls == 3: t_head
+        if distance_list[0][0] == 2 or distance_list[0][0] == 5:       # cls == 1: ct_head; cls == 3: t_head
             target_x = int(distance_list[0][2][0])
             target_y = int(distance_list[0][2][1])
         else:
             if len(distance_list) > 1:
-                if distance_list[1][0] == 1 or distance_list[1][0] == 3:
+                if distance_list[1][0] == 2 or distance_list[1][0] == 5:
                     target_x = int(distance_list[1][2][0])
                     target_y = int(distance_list[1][2][1])
             else:
