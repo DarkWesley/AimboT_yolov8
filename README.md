@@ -59,6 +59,8 @@ results = model.train(data="YOUR-DIRECTORY/datasets/cs2/csgo-kaggle.yaml",      
 
 训练完成后，获得`./runs`目录下的训练文件，找到权重文件`*.pt`。
 
+可用现有的已训练好的`v8s_180.pt`。
+
 ## 运行
 
 打开`./main.py`，根据你选择的数据集中的`name_class`修改一下内容：
